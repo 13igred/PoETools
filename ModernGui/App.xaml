@@ -1,0 +1,35 @@
+﻿<Application x:Class="ModernGui.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:ModernGui"
+             xmlns:viewModel="clr-namespace:ModernGui.MVVM.ViewModel"
+             xmlns:view="clr-namespace:ModernGui.MVVM.View"             
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Theme/MenuButtonTheme.xaml"/>
+                <ResourceDictionary Source="Theme/TextboxThemeLogin.xaml"/>
+                <ResourceDictionary Source="Theme/TextboxThemePassword.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+            <DataTemplate DataType="{x:Type viewModel:LoginViewModel}">
+                <view:LoginView/>
+            </DataTemplate>
+            
+            <DataTemplate DataType="{x:Type viewModel:GemSearchViewModel}">
+                <view:GemSearchView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:LoadPobViewModel}">
+                <view:LoadPobView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:SearchItemViewModel}">
+                <view:SearchItemView/>
+            </DataTemplate>
+            
+
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
